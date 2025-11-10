@@ -117,7 +117,8 @@ body {
     display: flex;
     align-items: center;
     cursor: pointer;
-    transition: background-color 0.5s ;
+    transition: background-color 0.5s;
+    position: relative;
 }
 
 /*Pop up*/
@@ -135,7 +136,7 @@ body {
     align-items: center; 
     color: white;
     position: absolute;
-    margin-left: 39rem;
+    bottom: calc(100% + 15px);
     animation-name: floatIn;
     animation-duration: 0.5s;
 }
@@ -207,6 +208,7 @@ body {
         padding-left: 2rem;
         padding-right: 2rem;
         padding-bottom: 1rem;
+        position: relative;
     }
 
     .text-1 {
@@ -229,13 +231,23 @@ body {
     }
 
     .popup.show{
-        margin-right: 39rem;
-        margin-top: 25.1rem;
-        border-radius: 0rem;
-        z-index: 1;
-        width: 90%;
+        position: absolute;        
+        bottom: 0;               
+        left: 0;                   
+        width: 100%;               
         height: 4rem;
-        justify-content: start;
+        border-radius: 0 0 0.8rem 0.8rem; 
+        background-color: var(--very-dark-greyish-blue);
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 0 1.5rem;
+        gap: 1rem;
+        z-index: -3;
+    }
+
+    .share-container.change{
+        background-color: white;
     }
 
     .arrow{
@@ -244,5 +256,7 @@ body {
 
     .share-container{
         z-index: 20;
+        position: static;
     }
 }
+
